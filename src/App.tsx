@@ -494,8 +494,8 @@ Return exactly this JSON structure with ACCURATE values based on the actual proj
 }`;
 
     try {
-      // Google Gemini API (Free Tier available at https://aistudio.google.com/app/apikey)
-      const GEMINI_API_KEY = "AIzaSyDm6ifzHybvhLQQHh7X2eqrZuHqhSHS8R8"; // Replace with your free API key
+      // Google Gemini API (Free Tier)
+      const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY; 
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: "POST",
         headers: {
